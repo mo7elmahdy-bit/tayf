@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة شباب طيف | المبادرات الثقافية والفنية</title>
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            glow: '#FFD700',
+                        },
+                        royal: {
+                            800: '#1E1B4B',
+                            900: '#0F172A',
+                            950: '#090D16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #090D16;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+
+        /* Gold Gradient Animations */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .gold-border-glow:hover {
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.45);
+            border-color: rgba(245, 158, 11, 0.8);
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(30, 27, 75, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E1B4B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D97706;
+        }
+    </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-royal-950">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-gold-600 to-gold-400 p-0.5 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                        <img src="https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/565883349_1279686560838168_6023836075605056811_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=YtuSBN52mG0Q7kNvwGML-H5&_nc_oc=AdqNZ235BtqlGjJJLgrzC12GbLAIQaN_xS_qH5PYpt28j9MYJtOkci-twizKMn49VJQ&_nc_zt=23&_nc_ht=scontent.fcai21-2.fna&_nc_gid=uQJKmddCEzztc3yUnPqpEw&_nc_ss=7b2a8&oh=00_AQJ4ZIjegVDgav8mjz650XXLMMu6WMmyRlZr2tw1I0R9GQ&oe=6ABF3708" 
+                             alt="شعار مؤسسة شباب طيف" 
+                             class="w-full h-full object-cover rounded-[10px]"
+                             onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-royal-950 text-gold-400\'><i class=\'fa-solid fa-masks-theater text-xl\'></i></div>';">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-wide text-white">مؤسسة <span class="gold-gradient-text">شباب طيف</span></span>
+                        <span class="text-xs text-gray-400">لالمبادرات الثقافية والفنية</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-reverse space-x-8 text-sm font-semibold">
+                    <a href="#home" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">الرئيسية</a>
+                    <a href="#about" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">عن المؤسسة</a>
+                    <a href="#achievement" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">الإنجاز الذهبي</a>
+                    <a href="#initiatives" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">مبادرتنا</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold-400 transition-colors duration-200">تواصل معنا</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/201028462088" target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-royal-950 font-bold hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>تواصل مباشر</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-gold-400 hover:bg-white/5 font-semibold">الرئيسية</a>
+            <a href="#about" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-gold-400 hover:bg-white/5 font-semibold">عن المؤسسة</a>
+            <a href="#achievement" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-gold-400 hover:bg-white/5 font-semibold">الإنجاز الذهبي</a>
+            <a href="#initiatives" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-gold-400 hover:bg-white/5 font-semibold">مبادرتنا</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg text-gray-300 hover:text-gold-400 hover:bg-white/5 font-semibold">تواصل معنا</a>
+            <a href="https://wa.me/201028462088" target="_blank" class="block text-center mt-4 px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-royal-950 font-bold">
+                تواصل عبر الواتساب
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Background Glowing Circles -->
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            
+            <div class="mb-8 flex flex-col items-center justify-center">
+                <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-gold-600 via-gold-400 to-yellow-200 shadow-2xl shadow-gold-500/30 mb-4 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/565883349_1279686560838168_6023836075605056811_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=YtuSBN52mG0Q7kNvwGML-H5&_nc_oc=AdqNZ235BtqlGjJJLgrzC12GbLAIQaN_xS_qH5PYpt28j9MYJtOkci-twizKMn49VJQ&_nc_zt=23&_nc_ht=scontent.fcai21-2.fna&_nc_gid=uQJKmddCEzztc3yUnPqpEw&_nc_ss=7b2a8&oh=00_AQJ4ZIjegVDgav8mjz650XXLMMu6WMmyRlZr2tw1I0R9GQ&oe=6ABF3708" 
+                         alt="شعار مؤسسة شباب طيف" 
+                         class="w-full h-full object-cover rounded-full"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full rounded-full flex items-center justify-center bg-royal-950 text-gold-400 text-4xl\'><i class=\'fa-solid fa-masks-theater\'></i></div>';">
+                </div>
+
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card gold-border-glow animate-pulse">
+                    <i class="fa-solid fa-award text-gold-400"></i>
+                    <span class="text-sm font-bold text-gold-400">حاصلة على الوسام الذهبي من جامعة الدول العربية</span>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+                صُناع الفكر والثقافة <br>
+                <span class="gold-gradient-text">ورواد المبادرات الفنية</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                مؤسسة <strong class="text-white font-semibold">شباب طيف</strong> هي المنصة العربية الأولى المكرسة لاحتضان وتطوير المبادرات الثقافية والفنية الشابة، وبناء جسور الإبداع على مستوى الوطن العربي.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#achievement" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-royal-950 font-extrabold text-lg shadow-xl shadow-gold-500/25 hover:shadow-gold-500/40 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>استكشف الإنجاز الذهبي</span>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-bold text-lg hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 border border-white/20">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>تواصل معنا</span>
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-white/10">
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold gold-gradient-text mb-1">+10</div>
+                    <div class="text-sm text-gray-400">سنوات من التميز</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold gold-gradient-text mb-1">الوطن العربي</div>
+                    <div class="text-sm text-gray-400">نطاق التأثير والعمل</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold gold-gradient-text mb-1">الوسام الذهبي</div>
+                    <div class="text-sm text-gray-400">تكريم جامعة الدول العربية</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold gold-gradient-text mb-1">+100</div>
+                    <div class="text-sm text-gray-400">فعالية ومبادرة نُفذت</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative bg-royal-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-md bg-gold-500/10 border border-gold-500/30 text-gold-400 text-sm font-bold">
+                        من نحن
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-bold leading-tight">
+                        نبني مستقبلاً ثقافياً وفنياً <br>
+                        <span class="gold-gradient-text">بأيادي الشباب العربي</span>
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        تعد مؤسسة <strong>شباب طيف</strong> كياناً ريادياً متقناً في تصميم وتنفيذ المبادرات الثقافية والفنية الرفيعة. نهدف إلى خلق مساحات تفاعلية تمكّن الطاقات الشبابية الإبداعية وتصقل مهاراتهم لتسهم في إثراء المشهد الثقافي العربي.
+                    </p>
+
+                    <!-- Core Features list -->
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl glass-card">
+                            <div class="p-3 rounded-xl bg-gold-500/20 text-gold-400 shrink-0">
+                                <i class="fa-solid fa-palette text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">المبادرات الفنية المتخصصة</h3>
+                                <p class="text-sm text-gray-400 mt-1">تقديم ورش عمل ومعارض ومشاريع فنية مبتكرة تشمل مختلف أشكال الفنون.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl glass-card">
+                            <div class="p-3 rounded-xl bg-gold-500/20 text-gold-400 shrink-0">
+                                <i class="fa-solid fa-book-open-reader text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">التنمية الثقافية والمجتمعية</h3>
+                                <p class="text-sm text-gray-400 mt-1">تعزيز الهوية العربية والتنوع الثقافي من خلال برامج توعوية وتدريبية مستدامة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card Graphics -->
+                <div class="relative">
+                    <div class="relative z-10 p-8 rounded-3xl glass-card gold-border-glow text-center space-y-6">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-gold-500 to-gold-300 flex items-center justify-center text-royal-950 text-4xl shadow-xl shadow-gold-500/30">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">رؤيتنا الاستراتيجية</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            أن نكون المؤسسة الرائدة والأولى اختياراً للشباب العربي في مجالات الابتكار الثقافي والفني، والوصول بالإنتاج الثقافي العربي إلى المحافل الإقليمية والدولية بأعلى معايير الجودة والتأثير.
+                        </p>
+                        <div class="pt-4 border-t border-white/10 flex justify-around text-center">
+                            <div>
+                                <span class="block text-2xl font-extrabold text-gold-400">إبداع</span>
+                                <span class="text-xs text-gray-400">بلا حدود</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-extrabold text-gold-400">تمكين</span>
+                                <span class="text-xs text-gray-400">للشباب</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-extrabold text-gold-400">أثر</span>
+                                <span class="text-xs text-gray-400">مستدام</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative back glow -->
+                    <div class="absolute -inset-2 bg-gradient-to-r from-gold-500 to-indigo-600 rounded-3xl blur-xl opacity-30 -z-10"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold Medal / Achievement Section -->
+    <section id="achievement" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 text-sm font-bold mb-4">
+                    تتويج التميز العربي
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black">
+                    الإنجاز الأبرز للمؤسسة
+                </h2>
+            </div>
+
+            <!-- Achievement Showcase Banner -->
+            <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-royal-800 via-royal-900 to-royal-950 border-2 border-gold-500/50 shadow-2xl relative overflow-hidden group">
+                
+                <!-- Background Gold Shine -->
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-gold-500/20 rounded-full blur-3xl group-hover:bg-gold-500/30 transition-all duration-500"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Medal Icon Container -->
+                    <div class="lg:col-span-4 flex justify-center">
+                        <div class="relative">
+                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-yellow-200 flex items-center justify-center p-1 shadow-2xl shadow-gold-500/40 animate-pulse">
+                                <div class="w-full h-full rounded-full bg-royal-950 flex flex-col items-center justify-center p-4 text-center border-4 border-gold-500">
+                                    <i class="fa-solid fa-medal text-5xl sm:text-6xl gold-gradient-text mb-2"></i>
+                                    <span class="text-xs font-bold text-gold-400 tracking-wider">جامعة الدول العربية</span>
+                                    <span class="text-lg font-black text-white">الوسام الذهبي</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Details -->
+                    <div class="lg:col-span-8 space-y-6 text-center lg:text-right">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gold-500/20 text-gold-300 font-semibold text-sm">
+                            <i class="fa-solid fa-crown text-gold-400"></i>
+                            <span>أعلى تكريم ثقافي وفني</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug">
+                            الحصول على <span class="gold-gradient-text">الوسام الذهبي</span> في مجال المبادرات الثقافية والفنية على مستوى الوطن العربي
+                        </h3>
+                        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                            تم منح هذا الوسام الرفيع لمؤسسة <strong class="text-white">شباب طيف</strong> من قِبل <strong class="text-gold-400">جامعة الدول العربية</strong> تقديرًا للجهود المتميزة والمبادرات النوعية التي ساهمت في دعم الشباب وتطوير المشهد الثقافي والفني على نطاق الوطن العربي بكفاءة واقتدار.
+                        </p>
+                        <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">
+                            <div class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300">
+                                <i class="fa-solid fa-check text-gold-400 ml-2"></i>اعتماد إقليمي رسمي
+                            </div>
+                            <div class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300">
+                                <i class="fa-solid fa-check text-gold-400 ml-2"></i>تميز ريادي عربي
+                            </div>
+                            <div class="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300">
+                                <i class="fa-solid fa-check text-gold-400 ml-2"></i>جودة واستدامة بالأعمال
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Initiatives / Services Section -->
+    <section id="initiatives" class="py-24 bg-royal-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-5xl font-bold mb-4">
+                    مجالات المبادرات والأنشطة
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    نصمم وننفذ مجموعة متنوعة من المبادرات والأنشطة الثقافية التي تستهدف إبراز الموهوبين
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Initiative Card 1 -->
+                <div class="p-8 rounded-3xl glass-card hover:border-gold-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-royal-950 transition-colors duration-300">
+                        <i class="fa-solid fa-masks-theater"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">المهرجانات والملتقيات الفنية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        تنظيم وتنسيق المهرجانات المسرحية والفنية التي تجمع المبدعين من مختلف الدول العربية لتبادل الخبرات والرؤى.
+                    </p>
+                </div>
+
+                <!-- Initiative Card 2 -->
+                <div class="p-8 rounded-3xl glass-card hover:border-gold-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-royal-950 transition-colors duration-300">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">الورش التدريبية وصقل المهارات</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        تقديم برامج ورش عمل متخصصة في الكتابة، الفنون التشكيلية، الإخراج، وإدارة المبادرات الثقافية للشباب.
+                    </p>
+                </div>
+
+                <!-- Initiative Card 3 -->
+                <div class="p-8 rounded-3xl glass-card hover:border-gold-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-2xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-royal-950 transition-colors duration-300">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">حضانات المشاريع الثقافية</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        دعم الأفكار والمبادرات الثقافية الناشئة وتحويلها من مجرد أفكار إلى مشاريع واقعية ومؤثرة في المجتمع.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block px-3 py-1 rounded-md bg-gold-500/10 border border-gold-500/30 text-gold-400 text-sm font-bold mb-3">
+                    تواصل معنا
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-bold">
+                    يسعدنا التعاون والشراكة معكم
+                </h2>
+                <p class="text-gray-400 mt-4 text-lg">
+                    سواء كنتم ترغبون في الانضمام لمبادراتنا أو الشراكة المؤسسية، تواصلوا معنا عبر الوسائل التالية:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Email Card -->
+                <a href="mailto:ttayf95@gmail.com" class="p-8 rounded-3xl glass-card gold-border-glow text-center hover:scale-105 transition-all duration-300 group block">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-gold-500 group-hover:text-royal-950 transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-300 mb-2">البريد الإلكتروني الرسمي</h3>
+                    <p class="text-xl font-extrabold text-white dir-ltr">ttayf95@gmail.com</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-gold-400 group-hover:underline">إرسال رسالة بريدية &larr;</span>
+                </a>
+
+                <!-- Phone / Whatsapp Card -->
+                <a href="https://wa.me/201028462088" target="_blank" class="p-8 rounded-3xl glass-card gold-border-glow text-center hover:scale-105 transition-all duration-300 group block">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-green-500 group-hover:text-royal-950 transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-300 mb-2">الهاتف والواتساب</h3>
+                    <p class="text-xl font-extrabold text-white dir-ltr">+20 102 846 2088</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-green-400 group-hover:underline">مراسلة مباشرة على الواتساب &larr;</span>
+                </a>
+
+                <!-- Location / Arab World Card -->
+                <div class="p-8 rounded-3xl glass-card gold-border-glow text-center">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-300 mb-2">نطاق العمل والتواجد</h3>
+                    <p class="text-xl font-extrabold text-white">جمهورية مصر العربية والوطن العربي</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-gray-400">مبادرات إقليمية ودولية</span>
+                </div>
+
+            </div>
+
+            <!-- Social Media Channels Banner -->
+            <div class="mt-16 p-8 rounded-3xl glass-card text-center max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-white mb-6">تابعوا حساباتنا الرسمية على منصات التواصل الاجتماعي</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/1DEuKaszek/" target="_blank" class="px-8 py-4 rounded-2xl bg-blue-600/20 hover:bg-blue-600 border border-blue-500/40 text-white font-bold transition-all duration-300 flex items-center gap-3 transform hover:-translate-y-1">
+                        <i class="fa-brands fa-facebook text-2xl text-blue-400 group-hover:text-white"></i>
+                        <span>صفحة الفيسبوك</span>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@tayf326" target="_blank" class="px-8 py-4 rounded-2xl bg-pink-600/20 hover:bg-pink-600 border border-pink-500/40 text-white font-bold transition-all duration-300 flex items-center gap-3 transform hover:-translate-y-1">
+                        <i class="fa-brands fa-tiktok text-2xl text-pink-400 group-hover:text-white"></i>
+                        <span>حساب التيك توك</span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10 bg-royal-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-gold-600 to-gold-400 p-0.5 overflow-hidden">
+                    <img src="https://scontent.fcai21-2.fna.fbcdn.net/v/t39.30808-6/565883349_1279686560838168_6023836075605056811_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=YtuSBN52mG0Q7kNvwGML-H5&_nc_oc=AdqNZ235BtqlGjJJLgrzC12GbLAIQaN_xS_qH5PYpt28j9MYJtOkci-twizKMn49VJQ&_nc_zt=23&_nc_ht=scontent.fcai21-2.fna&_nc_gid=uQJKmddCEzztc3yUnPqpEw&_nc_ss=7b2a8&oh=00_AQJ4ZIjegVDgav8mjz650XXLMMu6WMmyRlZr2tw1I0R9GQ&oe=6ABF3708" 
+                         alt="شعار مؤسسة شباب طيف" 
+                         class="w-full h-full object-cover rounded-[7px]"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-royal-950 text-gold-400\'><i class=\'fa-solid fa-masks-theater text-xs\'></i></div>';">
+                </div>
+                <span class="text-lg font-bold text-white">مؤسسة شباب طيف</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                جميع الحقوق محفوظة &copy; <span id="year"></span> لمؤسسة شباب طيف للمبادرات الثقافية والفنية.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JS -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Current Year for Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
